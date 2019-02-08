@@ -11,12 +11,27 @@ export default class Ball {
         this.reset();
     }
 
+wallCollision() {
+
+}
+
+paddleCollision() {
+
+}
+
     reset() {
      this.x = this.boardWidth / 2;
     this.y = this.boardHeight / 2;
 
     }
 
+goal(player) {
+    // increment the score
+    // ../
+    // reset the ball
+    this.reset();
+
+}
 
     render(svg, player1, player2) {
         // draw ball
@@ -29,6 +44,11 @@ export default class Ball {
         // append to svg in game
 
         svg.appendChild(circle);
+
+        // Detect goal
+        // left goal variable
+        // right goal variable
+        // conditional to detect if left or right goal
 
     }
  
