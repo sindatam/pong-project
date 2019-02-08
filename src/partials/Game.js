@@ -1,5 +1,6 @@
 import Board from './Board';
 import Paddle from './Paddle';
+import Ball from './Ball';
 import { SVG_NS } from '../settings';
 import { KEYS } from '../settings';
 
@@ -13,6 +14,7 @@ export default class Game {
     this.gameElement = document.getElementById(this.element);
     // Create a board object and set width and height to game width and height
     this.board = new Board(this.width, this.height);
+    this.ball = new Ball(8, this.width, this.height);
 
     this.paddleWidth = 8;
     this.paddleHeight = 56;
@@ -68,6 +70,7 @@ export default class Game {
     this.board.render(svg);
     this.player1.render(svg);
     this.player2.render(svg);
+    this.ball.render(svg);
 
   }
 }
