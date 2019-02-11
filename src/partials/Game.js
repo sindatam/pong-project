@@ -3,6 +3,7 @@ import Paddle from './Paddle';
 import Ball from './Ball';
 import { SVG_NS } from '../settings';
 import { KEYS } from '../settings';
+import Score from './Score';
 
 export default class Game {
   constructor(element, width, height) {
@@ -48,6 +49,9 @@ export default class Game {
 
     )
 
+    this.score1 = new Score(this.width / 2 - 50, 30, 30);
+    this.score2 = new Score(this.width / 2 + 25, 30, 30);
+
     document.addEventListener('keydown', event => {
       // Change boolean from true to false
       switch (event.key) {
@@ -90,8 +94,8 @@ export default class Game {
 
 
   // render and update the score component based on player score
-  // this.score1.render(svg, this.player1.score);
-  // this.score2.render(svg, this.player2.score);
+  this.score1.render(svg, this.player1.score);
+  this.score2.render(svg, this.player2.score);
 
 
   }
