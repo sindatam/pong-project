@@ -47,9 +47,24 @@ export default class Game {
       KEYS.down
 
     )
+
+    document.addEventListener('keydown', event => {
+      // Change boolean from true to false
+      switch (event.key) {
+        case KEYS.spaceBar:
+        this.pause = !this.pause;
+        // console.log(this.pause);
+        break;
+      }
+    });
+
   }
 
   render() {
+    // pause the game
+    if(this.pause) {
+      return;
+    }
     // More code goes here....
     // Create a svg element
 
@@ -70,7 +85,14 @@ export default class Game {
     this.board.render(svg);
     this.player1.render(svg);
     this.player2.render(svg);
-    this.ball.render(svg);
+    this.ball.render(svg, this.player1, this.player2);
+
+
+
+  // render and update the score component based on player score
+  // this.score1.render(svg, this.player1.score);
+  // this.score2.render(svg, this.player2.score);
+
 
   }
 }
