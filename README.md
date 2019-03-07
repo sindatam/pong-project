@@ -18,4 +18,4 @@ A basic pong game using SVGs.
 * ▲ : up
 * ▼: down
 
-# Languages used: Javascript
+#Languages used: Javascript
